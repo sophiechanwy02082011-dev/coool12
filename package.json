@@ -1,0 +1,47 @@
+{
+  "name": "recallforge-production",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "build:dataset": "tsx scripts/build-exam-dataset.ts",
+    "eval:exam": "tsx scripts/run-examspec-evals.ts",
+    "self-audit": "node scripts/self-audit.mjs"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^10.0.1",
+    "@fastify/formbody": "^8.0.1",
+    "@fastify/multipart": "^9.0.3",
+    "@fastify/static": "^8.2.0",
+    "dotenv": "^16.6.1",
+    "fastify": "^5.4.0",
+    "fastify-plugin": "^5.0.1",
+    "google-auth-library": "^10.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mammoth": "^1.10.0",
+    "mime-types": "^3.0.1",
+    "openai": "^5.12.2",
+    "pdf-parse": "^1.1.1",
+    "pg": "^8.16.3",
+    "zod": "^4.0.17",
+    "googleapis": "^155.0.1",
+    "youtube-transcript": "^1.3.1",
+    "jszip": "^3.10.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mime-types": "^2.1.4",
+    "@types/node": "^24.1.0",
+    "@types/pg": "^8.15.5",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

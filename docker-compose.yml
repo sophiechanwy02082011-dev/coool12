@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: recallforge
+      POSTGRES_PASSWORD: recallforge
+      POSTGRES_DB: recallforge
+    ports: ["5432:5432"]
+    volumes: ["recallforge-db:/var/lib/postgresql/data"]
+  app:
+    build: .
+    env_file: .env
+    depends_on: [db]
+    ports: ["3000:3000"]
+    volumes: ["recallforge-uploads:/app/data/uploads"]
+volumes:
+  recallforge-db:
+  recallforge-uploads:
