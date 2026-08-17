@@ -4,7 +4,7 @@ COPY package*.json ./
 RUN npm install --ignore-scripts
 COPY tsconfig.json ./
 COPY src ./src
-COPY public ./public
+COPY --from=builder /app/static ./static
 COPY db ./db
 RUN npm run build
 
